@@ -1,0 +1,929 @@
+#:import Factory kivy.factory.Factory
+
+<IP_Addresses@Popup>
+    on_open:
+        extra_information.text = """'nslookup' is the command running behind the scenes and it can be used for identifying IP addresses of a given domain name.
+        Nslookup is used in a passive way on this interface, but it can also be used for active reconnaissance which will interfere with the searched domain.\n
+        For using this tool, you need to input the name of a domain in the left side section and press the 'Search' button. (e.g. of domains: facebook.com, google.com, warwick.ac.uk)\n
+        You can find more details about the command by using the “man” command in the terminal (man nslookup) """
+    auto_dismiss: False
+    size_hint: 0.5, 0.5
+    pos_hint: {"x": 0.3, "y":0.3}
+    title : "Extra Information - Pop-up"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            id: extra_information
+            multiline: True
+            font_size: 24
+            italic: True
+            text_size: self.size
+            halign: 'center'
+
+        Button:
+            text: "Close me"
+            font_size: 15
+            size_hint: 0.1, 0.2
+            on_release: root.dismiss()
+
+
+<Sub_domains@Popup>
+    on_open:
+        extra_information.text = """Sublist3r is a 3rd party library used for identifying subdomains which are associated with a main domain.
+        The tool is set to run in a passive way which will not interfere with the actual domain running and it will not cause any possible issues to it.
+        For using this tool, you need to input the name of a domain below the 'Subdomain' section and press the “Search” button. (e.g. of domains: facebook.com, google.com, warwick.ac.uk).
+        As the tool is running in passive way there might be a chance of receiving false-positive answers so the user would have to analyse these.
+        Sublist3r can also be used as a full command on the terminal, for finding more information about it use the command “sublist3r -h” on the terminal."""
+    auto_dismiss: False
+    size_hint: 0.5, 0.5
+    pos_hint: {"x": 0.3, "y":0.3}
+    title : "Extra Information - Pop-up"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            multiline: True
+            id: extra_information
+            font_size: 24
+            text_size: self.size
+            halign: 'center'
+            italic: True
+        Button:
+            text: "Close me"
+            font_size: 15
+            size_hint: 0.1, 0.2
+            on_release: root.dismiss()
+
+<MetaData_Extraction@Popup>
+    on_open:
+        extra_information.text = """“exiftool” is the command running behind the scenes and it can be used for extracting the metadata that it is found within the file.\n
+        For using this feature, you need to use the navigation provided in the left side and select a file, the program will extract the data automatically and display it on the right side.
+        An image was provided for this feature and it can be found on Desktop.\n
+        You can find more details about the command by using the “man” command in the terminal (man exiftool)"""
+    auto_dismiss: False
+    size_hint: 0.5, 0.5
+    pos_hint: {"x": 0.3, "y":0.3}
+    title : "Extra Information - Pop-up"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            multiline: True
+            id: extra_information
+            font_size: 24
+            text_size: self.size
+            halign: 'center'
+            italic: True
+        Button:
+            text: "Close me"
+            font_size: 15
+            size_hint: 0.1, 0.2
+            on_release: root.dismiss()
+<Google_Dorks@Popup>
+    on_open:
+        extra_information.text = """This is a hardcoded feature, and no external software or command is used for creating the advanced search engine queries.
+        For using this feature, you can fill up as many fields from the left side as you want for creating the query you need, you do not have to use all of them, only choose the ones you need.\n
+        There is extra information on the left side about the meaning of each field.
+        For finding more information about advanced search engines you can search on google “Google Search Operators”"""
+
+
+    auto_dismiss: False
+    size_hint: 0.5, 0.4
+    pos_hint: {"x": 0.2, "y":0.3}
+    title : "Extra Information - Pop-up"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            multiline: True
+            id: extra_information
+            font_size: 21
+            text_size: self.size
+            halign: 'center'
+            italic: True
+        Button:
+            text: "Close me"
+            font_size: 15
+            size_hint: 0.1, 0.2
+            on_release: root.dismiss()
+<IoT_Devices@Popup>
+    on_open:
+        extra_information.text = """This feature uses the website Shodan.io for extracting the information about the IoT device.
+        This will output general information about the device, open ports and possible vulnerabilities.
+        For using this feature, you need to input the IP address of the IoT device that you are searching and press the button below. (e.g. 117.50.14.196)
+        The feature runs in passive way so when you are doing your searches you will not cause any problems to the servers.\n
+        For finding more information you can navigate to the Shodan.io website."""
+
+    auto_dismiss: False
+    size_hint: 0.5, 0.5
+    pos_hint: {"x": 0.3, "y":0.3}
+    title : "Extra Information - Pop-up"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            multiline: True
+            id: extra_information
+            font_size: 24
+            text_size: self.size
+            halign: 'center'
+            italic: True
+        Button:
+            text: "Close me"
+            font_size: 15
+            size_hint: 0.1, 0.2
+            on_release: root.dismiss()
+
+<Email_addresses@Popup>
+    on_open:
+        extra_information.text = """“theHarvester” is the tool running behind the scenes and it can be used for identifying a list of email addresses, the data will be outputted on the right side of the interface.
+        For using this feature, you need to input the name of the company’s domain that you want to investigate (e.g. warwick.ac.uk, instagram.com).\n
+        As the tool is running in a passive way there is a chance that false-positive answers will be given, so the results will need to be analysed further by the user.\n
+        For finding more details about this tool you can use the command “python3 theHarvester.py -h” or search for the help page online."""
+    auto_dismiss: False
+    size_hint: 0.6, 0.5
+    pos_hint: {"x": 0.25, "y":0.3}
+    title : "Extra Information - Pop-up"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            multiline: True
+            id: extra_information
+            font_size: 24
+            text_size: self.size
+            halign: 'center'
+            italic: True
+        Button:
+            text: "Close me"
+            font_size: 15
+            size_hint: 0.1, 0.2
+            on_release: root.dismiss()
+
+<Employees_list@Popup>
+    on_open:
+        extra_information.text = """“theHarvester” is the tool running behind the scenes and it can be used for identifying a list of employees which are related to the company, the data will be outputted on the right side of the interface.
+        For using this feature, you need to input the name of the company’s domain that you want to investigate (e.g. warwick.ac.uk, instagram.com).\n
+        As the tool is running in a passive way there is a chance that false-positive answers will be given, so the results will need to be analysed further by the user.\n
+        For finding more details about this tool you can use the command “python3 theHarvester.py -h” or search for the help page online.
+        """
+    auto_dismiss: False
+    size_hint: 0.6, 0.6
+    pos_hint: {"x": 0.25, "y":0.3}
+    title : "Extra Information - Pop-up"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            multiline: True
+            id: extra_information
+            font_size: 24
+            text_size: self.size
+            halign: 'center'
+            italic: True
+        Button:
+            text: "Close me"
+            font_size: 15
+            size_hint: 0.1, 0.2
+            on_release: root.dismiss()
+
+<Test>:
+    ip: ip
+    data_output: data_output
+    subdomain: subdomain
+    subdomain_output: subdomain_output
+    my_file: my_file
+    # used for google dorks
+    page_text: page_text
+    domain: domain
+    in_title: in_title
+    file_type: file_type
+    in_body: in_body
+    in_url: in_url
+    query_output: query_output
+    # used for metadata extraction
+    id: my_file
+    meta_data: meta_data
+    # used for IoT devices
+    search_iot: search_iot
+    details_iot: details_iot
+    open_ports: open_ports
+    vulnerabilities: vulnerabilities
+    # used for email addresses
+    emails_found: emails_found
+    search_emails: search_emails
+    employees_found: employees_found
+
+
+    do_default_tab: False
+    tab_width: 150
+    size: 100, 400
+    TabbedPanelItem:
+        text: 'Home'
+        FloatLayout:
+            Label:
+                font_size: 20
+                text: root.intro_data
+                size_hint: 0.36, 0.5
+                pos_hint: {"x": 0.32, "y": 0.45}
+                text_size: self.size
+                halign: 'center'
+            Label:
+                font_size: 30
+                text: "WELCOME TO OSINT FOR BEGINNERS"
+                bold: True
+                italic: True
+                underline: True
+                pos_hint: { "x":0.34, "y": 0.85}
+                text_size: self.size
+                #halign: 'center'
+            Image:
+                source: "OSINT.jpg"
+                pos_hint:{"x": 0.01, "y": 0.4}
+                size_hint: 0.3, 0.3
+                allow_stretch: True
+                keep_ratio: True
+            Image:
+                source: "OSINT2.png"
+                pos_hint:{"x": 0.7, "y": 0.4}
+                size_hint: 0.3, 0.3
+                allow_stretch: True
+                keep_ratio: True
+
+            Image:
+                source: "WMG_1.jpg"
+                pos_hint:{"x": 0.37, "y": 0.01}
+                size_hint: 0.25, 0.24
+                allow_stretch: True
+                keep_ratio: True
+
+
+
+
+    TabbedPanelItem:
+        text:"Help"
+        FloatLayout:
+            Label:
+                text: "HELP - PAGE"
+                size_hint: 0.1, 0.1
+                pos_hint: {"x": 0.42, "y": 0.85}
+                font_size: 30
+                bold: True
+                italic: True
+                underline: True
+            Image:
+                source: "Help.png"
+                pos_hint:{"x": 0.7, "y": 0.4}
+                size_hint: 0.3, 0.3
+                allow_stretch: True
+                keep_ratio: True
+            Label:
+                font_size: 20
+                text: root.help_data
+                pos_hint: {"x": 0.17, "y":0.38}
+                size_hint: 0.6, 0.6
+                text_size: self.size
+                halign: 'center'
+            Image:
+                source: "WMG_1.jpg"
+                pos_hint:{"x": 0.37, "y": 0.01}
+                size_hint: 0.25, 0.24
+                allow_stretch: True
+                keep_ratio: True
+
+    TabbedPanelItem:
+        text:"IP Addresses"
+        FloatLayout:
+            Button:
+                id : text
+                pos_hint: {"x": 0.21, "y":0.62}
+                size_hint: 0.04, 0.04
+                text: "Extra Info"
+                font_size: 15
+                on_release: Factory.IP_Addresses().open()
+            Button:
+                pos_hint: {"x": 0.93, "y":0.63}
+                size_hint: 0.04, 0.04
+                text: "Extra Info"
+                font_size: 15
+                on_release: Factory.Sub_domains().open()
+            Image:
+                source: "WMG_1.jpg"
+                pos_hint:{"x": 0.37,"y": 0.01}
+                size_hint: 0.25, 0.24
+                allow_stretch: True
+                keep_ratio: True
+            Label:
+                text: "IP Addresses"
+                size_hint: 0.1, 0.1
+                pos_hint: {"x": 0.4, "y": 0.86}
+                font_size: 30
+                bold: True
+                italic: True
+                underline: True
+            Label:
+                text: root.ip_addresses_data
+                size_hint: 0.4, 0.4
+                pos_hint: {"x": 0.27, "y": 0.33}
+                font_size: 20
+                text_size: self.size
+                halign: 'center'
+            Label:
+                text: "Domain name"
+                size_hint: 0.1, 0.1
+                pos_hint: {"x": 0.02, "y": 0.7}
+                font_size: 24
+                bold: True
+            TextInput:
+                id: ip
+                multiline: False
+                font_size: 15
+                size_hint: 0.13, 0.035
+                pos_hint: {"x": 0.08, "y": 0.7}
+            Button:
+                text: "Search"
+                size_hint: 0.08, 0.04
+                pos_hint: {"x": 0.03, "y": 0.65}
+                on_press: root.ip_addresses()
+
+            ScrollView:
+                pos_hint: {"x": 0.03, "y": 0.2}
+                size_hint: 0.25, 0.35
+                Label:
+                    id: data_output
+                    multiline: True
+                    color: (0,0,0,1)
+                    size_hint: 1, None
+                    height: self.texture_size[1]
+                    text_size: None, None
+                    font_size: 20
+                    pos_hint: {"x": 0.03, "y": 0.2}
+                    background_color: {1, 1, 1, 1}
+                    canvas.before:
+                        Color:
+                            rgba: self.background_color
+                        Rectangle:
+                            size: self.size
+                            pos:self.pos
+
+            Label:
+                text: "Subdomain"
+                size_hint: 0.1, 0.1
+                pos_hint: {"x":0.7 , "y":0.7 }
+                font_size: 24
+                bold: True
+            TextInput:
+                id: subdomain
+                multiline: False
+                font_size: 15
+                size_hint: 0.13, 0.035
+                pos_hint: {"x": 0.75, "y": 0.7}
+            Label:
+                text: "If only one result comes back, please check your spelling \n as well as making sure that the domain actually exists.\n Thank you !!!"
+                multiline: True
+                font_size: 20
+                size_hint: 0.1, 0.1
+                pos_hint: {"x":0.8, "y":0.07}
+                halign: 'center'
+
+            Button:
+                text: "Search"
+                size_hint: 0.08, 0.04
+                pos_hint: {"x": 0.8, "y": 0.65}
+                on_press: root.subdomains()
+
+            ScrollView:
+                pos_hint: {"x": 0.68, "y": 0.25}
+                size_hint: 0.3, 0.3
+                Label:
+                    id: subdomain_output
+                    multiline: True
+                    color: (0,0,0,1)
+                    size_hint: 1, None
+                    height: self.texture_size[1]
+                    text_size: None, None
+                    font_size: 20
+                    pos_hint: {"x": 0.7, "y": 0.25}
+                    background_color1: {1, 1, 1, 1}
+                    canvas.before:
+                        Color:
+                            rgba: self.background_color1
+                        Rectangle:
+                            size: self.size
+                            pos:self.pos
+
+
+    TabbedPanelItem:
+        text:"Metadata Extraction"
+        FloatLayout:
+            FileChooserIconView:
+                id: filechooser
+                on_selection: my_file.selected(filechooser.selection)
+                size_hint: 0.3, 0.3
+                pos_hint: {"x":0.05, "y": 0.15}
+            Image:
+                id: my_image
+                source: ""
+                size_hint: 0.3, 0.3
+                pos_hint: {"x":0.07, "y": 0.5}
+
+            Label:
+                text: "Metadata - Extraction"
+                size_hint: 0.3, 0.1
+                pos_hint: {"x": 0.28, "y": 0.85}
+                font_size: 30
+                bold: True
+                italic: True
+                underline: True
+            Image:
+                source: "WMG_1.jpg"
+                pos_hint:{"x": 0.37,"y": 0.01}
+                size_hint: 0.25, 0.24
+                allow_stretch: True
+                keep_ratio: True
+            Label:
+                text: root.metadata_extraction_data
+                size_hint: 0.28, 0.6
+                pos_hint: {"x": 0.35, "y": 0.36}
+                font_size: 20
+                text_size: self.size
+                halign: 'center'
+
+            Button:
+                pos_hint: {"x": 0.85, "y":0.08}
+                size_hint: 0.04, 0.04
+                text: "Extra Info"
+                font_size: 15
+                on_release: Factory.MetaData_Extraction().open()
+
+            Label:
+                id: meta_data
+                color: (0,0,0,1)
+                size_hint: 0.30, 0.70
+                font_size: 20
+                pos_hint: {"x": 0.65, "y": 0.15}
+                background_color5: {1, 1, 1, 1}
+                canvas.before:
+                    Color:
+                        rgba: self.background_color5
+                    Rectangle:
+                        size: self.size
+                        pos:self.pos
+    TabbedPanelItem:
+        text:"Google Dorks"
+        FloatLayout:
+            Label:
+                text: "Advance Search Engine Queries"
+                size_hint: 0.1, 0.1
+                pos_hint: {"x": 0.4, "y": 0.85}
+                font_size: 30
+                bold: True
+                italic: True
+                underline: True
+            Label:
+                text: root.google_dorks_info
+                size_hint: 0.3, 0.5
+                pos_hint: {"x": 0.01, "y": 0.03}
+                font_size: 20
+                text_size: self.size
+                halign: 'center'
+
+            Label:
+                text: root.google_dorks_data
+                size_hint: 0.4, 0.3
+                pos_hint: {"x": 0.4, "y": 0.57}
+                font_size: 20
+                text_size: self.size
+                halign: 'center'
+            Label:
+                text: "Options for advance search queries"
+                size_hint: 0.1, 0.1
+                pos_hint: {"x": 0.07, "y": 0.7}
+                font_size: 20
+                bold: True
+
+            Label:
+                text: "Page Text"
+                color: (0,0,0,1)
+                size_hint: 0.07, 0.04
+                font_size: 15
+                pos_hint: {"x": 0.05, "y": 0.68}
+                background_color2: {1, 1, 1, 1}
+                bold: True
+                canvas.before:
+                    Color:
+                        rgba: self.background_color2
+                    Rectangle:
+                        size: self.size
+                        pos:self.pos
+
+            Label:
+                text: "Domain"
+                color: (0,0,0,1)
+                size_hint: 0.07, 0.04
+                font_size: 15
+                pos_hint: {"x": 0.05, "y": 0.63}
+                background_color3: {1, 1, 1, 1}
+                bold: True
+                canvas.before:
+                    Color:
+                        rgba: self.background_color3
+                    Rectangle:
+                        size: self.size
+                        pos:self.pos
+            Label:
+                text: "Title"
+                color: (0,0,0,1)
+                size_hint: 0.07, 0.04
+                font_size: 15
+                pos_hint: {"x": 0.05, "y": 0.58}
+                background_color6: {1, 1, 1, 1}
+                bold: True
+                canvas.before:
+                    Color:
+                        rgba: self.background_color6
+                    Rectangle:
+                        size: self.size
+                        pos:self.pos
+            Label:
+                text: "File Type"
+                color: (0,0,0,1)
+                size_hint: 0.07, 0.04
+                font_size: 15
+                pos_hint: {"x": 0.05, "y": 0.53}
+                background_color7: {1, 1, 1, 1}
+                bold: True
+                canvas.before:
+
+                    Color:
+                        rgba: self.background_color7
+                    Rectangle:
+                        size: self.size
+                        pos:self.pos
+            Label:
+                text: "Body"
+                color: (0,0,0,1)
+                size_hint: 0.07, 0.04
+                font_size: 15
+                pos_hint: {"x": 0.05, "y": 0.48}
+                background_color8: {1, 1, 1, 1}
+                bold: True
+                canvas.before:
+                    Color:
+                        rgba: self.background_color8
+                    Rectangle:
+                        size: self.size
+                        pos:self.pos
+            Label:
+                text: "URL"
+                color: (0,0,0,1)
+                size_hint: 0.07, 0.04
+                font_size: 15
+                pos_hint: {"x": 0.05, "y": 0.43}
+                background_color9: {1, 1, 1, 1}
+                bold: True
+                canvas.before:
+                    Color:
+                        rgba: self.background_color9
+                    Rectangle:
+                        size: self.size
+                        pos:self.pos
+            TextInput:
+                id: page_text
+                multiline: False
+                font_size: 15
+                size_hint: 0.13, 0.035
+                pos_hint: {"x": 0.14, "y": 0.68}
+
+            TextInput:
+                id: domain
+                multiline: False
+                font_size: 15
+                size_hint: 0.13, 0.035
+                pos_hint: {"x": 0.14, "y": 0.63}
+            TextInput:
+                id: in_title
+                multiline: False
+                font_size: 15
+                size_hint: 0.13, 0.035
+                pos_hint: {"x": 0.14, "y": 0.58}
+            TextInput:
+                id: file_type
+                multiline: False
+                font_size: 15
+                size_hint: 0.13, 0.035
+                pos_hint: {"x": 0.14, "y": 0.53}
+            TextInput:
+                id: in_body
+                multiline: False
+                font_size: 15
+                size_hint: 0.13, 0.035
+                pos_hint: {"x": 0.14, "y": 0.48}
+            TextInput:
+                id: in_url
+                multiline: False
+                font_size: 15
+                size_hint: 0.13, 0.035
+                pos_hint: {"x": 0.14, "y": 0.43}
+
+            Button:
+                text: "Create query"
+                size_hint: 0.08, 0.04
+                pos_hint: {"x": 0.3, "y": 0.48}
+                on_press: root.google_dorks()
+            Button:
+                text: "Clear data"
+                size_hint: 0.08, 0.04
+                pos_hint: {"x": 0.22, "y": 0.35}
+                on_press: root.clear_google_dorks()
+
+            TextInput:
+                id: query_output
+                color: (0,0,0,1)
+                size_hint: 0.4, 0.2
+                font_size: 20
+                pos_hint: {"x": 0.4, "y": 0.3}
+
+            Image:
+                source: "WMG_1.jpg"
+                pos_hint:{"x": 0.37,"y": 0.01}
+                size_hint: 0.25, 0.24
+                allow_stretch: True
+                keep_ratio: True
+            Button:
+                pos_hint: {"x": 0.7, "y":0.23}
+                size_hint: 0.04, 0.04
+                text: "Extra Info"
+                font_size: 15
+                on_release: Factory.Google_Dorks().open()
+
+    TabbedPanelItem:
+        text:"IoT Devices"
+        FloatLayout:
+            Button:
+                pos_hint: {"x": 0.23, "y":0.6}
+                size_hint: 0.04, 0.04
+                text: "Extra Info"
+                font_size: 15
+                on_release: Factory.IoT_Devices().open()
+            Label:
+                text: "IoT Devices"
+                size_hint: 0.1, 0.1
+                pos_hint: {"x": 0.4, "y": 0.85}
+                font_size: 30
+                bold: True
+                italic: True
+                underline: True
+            Label:
+                text: root.iot_devices_data
+                size_hint: 0.2, 0.4
+                pos_hint: {"x": 0.04, "y": 0.2}
+                font_size: 20
+                text_size: self.size
+                halign: 'center'
+            Image:
+                source: "WMG_1.jpg"
+                pos_hint:{"x": 0.37,"y": 0.01}
+                size_hint: 0.25, 0.24
+                allow_stretch: True
+                keep_ratio: True
+            Label:
+                text: "Input IoT IP address"
+                font_size: 24
+                pos_hint: {"x": 0.02 , "y": 0.75 }
+                size_hint: 0.1, 0.04
+                bold: True
+            TextInput:
+                id: search_iot
+                multiline: False
+                font_size: 15
+                pos_hint: {"x": 0.07 , "y": 0.7 }
+                size_hint: 0.17, 0.03
+            Button:
+                text: "Search device"
+                font_size: 15
+                pos_hint: {"x": 0.1 , "y": 0.64 }
+                size_hint: 0.1, 0.05
+                on_press: root.iot_devices()
+            Label:
+                text: "Details about the IoT device"
+                font_size: 24
+                pos_hint: {"x": 0.22 , "y": 0.5 }
+                size_hint: 0.3, 0.5
+                bold: True
+
+            Label:
+                id: details_iot
+                multiline: True
+                color: (0,0,0,1)
+                size_hint: 0.27, 0.35
+                height: self.texture_size[1]
+                text_size: None, None
+                font_size: 15
+                pos_hint: {"x": 0.3, "y": 0.35}
+                background_color10: {1, 1, 1, 1}
+                canvas.before:
+                    Color:
+                        rgba: self.background_color10
+                    Rectangle:
+                        size: self.size
+                        pos:self.pos
+            Label:
+                text: "Open Ports"
+                font_size: 24
+                pos_hint: {"x": 0.53 , "y": 0.5 }
+                size_hint: 0.3, 0.5
+                bold: True
+
+            # set the position for the scroll bar
+            ScrollView:
+                pos_hint: {"x": 0.61, "y": 0.22}
+                size_hint: 0.5, 0.5
+                #do_scroll_x: True
+                #do_scroll_y: False
+                Label:
+                    id: open_ports
+                    multiline: True
+                    color: (0,0,0,1)
+                    size_hint: 0.3, None
+                    height: self.texture_size[1]
+                    text_size: None, None
+                    font_size: 20
+                    pos_hint: {"x": 0.3, "y": 0.3}
+                    background_color12: {1, 1, 1, 1}
+                    canvas.before:
+                        Color:
+                            rgba: self.background_color12
+                        Rectangle:
+                            size: self.size
+                            pos:self.pos
+
+            Label:
+                text: "Possible Vulnerabilities"
+                font_size: 24
+                pos_hint: {"x": 0.73 , "y": 0.5 }
+                size_hint: 0.3, 0.5
+                bold: True
+            ScrollView:
+                pos_hint: {"x": 0.8, "y": 0.27}
+                size_hint: 0.3, 0.45
+                Label:
+                    id: vulnerabilities
+                    multiline: True
+                    color: (0,0,0,1)
+                    size_hint: 0.5, None
+                    height: self.texture_size[1]
+                    text_size: None, None
+                    font_size: 20
+                    pos_hint: {"x": 0.3, "y": 0.3}
+                    background_color13: {1, 1, 1, 1}
+                    canvas.before:
+                        Color:
+                            rgba: self.background_color13
+                        Rectangle:
+                            size: self.size
+                            pos:self.pos
+
+    TabbedPanelItem:
+        text:"Email Addresses"
+        FloatLayout:
+            Button:
+                pos_hint: {"x": 0.13, "y":0.58}
+                size_hint: 0.04, 0.04
+                text: "Extra Info"
+                font_size: 15
+                on_release: Factory.Email_addresses().open()
+            Label:
+                text: "Email Addresses Identification"
+                size_hint: 0.1, 0.1
+                pos_hint: {"x": 0.4, "y": 0.85}
+                font_size: 30
+                bold: True
+                italic: True
+                underline: True
+            Label:
+                text: root.email_addresses_data
+                size_hint: 0.25, 0.4
+                pos_hint: {"x": 0.25, "y": 0.3}
+                font_size: 20
+                text_size: self.size
+                halign: 'center'
+            Image:
+                source: "WMG_1.jpg"
+                pos_hint:{"x": 0.37,"y": 0.01}
+                size_hint: 0.25, 0.24
+                allow_stretch: True
+                keep_ratio: True
+            Label:
+                text: "Input Company URL"
+                font_size: 24
+                pos_hint: {"x": 0.02 , "y": 0.75 }
+                size_hint: 0.1, 0.04
+                bold: True
+            TextInput:
+                id: search_emails
+                multiline: False
+                font_size: 15
+                pos_hint: {"x": 0.07 , "y": 0.7 }
+                size_hint: 0.17, 0.03
+            Button:
+                text: "Find Email addresses"
+                font_size: 15
+                pos_hint: {"x": 0.1 , "y": 0.64 }
+                size_hint: 0.1, 0.05
+                on_press: root.email_addresses()
+            # set the position for the scroll bar
+            ScrollView:
+                pos_hint: {"x": 0.55, "y": 0.27}
+                size_hint: 0.4, 0.45
+                Label:
+                    id: emails_found
+                    multiline: True
+                    color: (0,0,0,1)
+                    size_hint: 0.6, None
+                    height: self.texture_size[1]
+                    text_size: None, None
+                    font_size: 20
+                    pos_hint: {"x": 0.3, "y": 0.3}
+                    background_color14: {1, 1, 1, 1}
+                    canvas.before:
+                        Color:
+                            rgba: self.background_color14
+                        Rectangle:
+                            size: self.size
+                            pos:self.pos
+
+
+    TabbedPanelItem:
+        text:"Employees"
+        FloatLayout:
+            Button:
+                pos_hint: {"x": 0.13, "y":0.58}
+                size_hint: 0.04, 0.04
+                text: "Extra Info"
+                font_size: 15
+                on_release: Factory.Employees_list().open()
+            Label:
+                text: "Employees Identification"
+                size_hint: 0.1, 0.1
+                pos_hint: {"x": 0.4, "y": 0.85}
+                font_size: 30
+                bold: True
+                italic: True
+                underline: True
+            Label:
+                text: root.employees_found_data
+                size_hint: 0.25, 0.4
+                pos_hint: {"x": 0.25, "y": 0.3}
+                font_size: 20
+                text_size: self.size
+                halign: 'center'
+            Image:
+                source: "WMG_1.jpg"
+                pos_hint:{"x": 0.37,"y": 0.01}
+                size_hint: 0.25, 0.24
+                allow_stretch: True
+                keep_ratio: True
+            Label:
+                text: "Input Company name"
+                font_size: 24
+                pos_hint: {"x": 0.02 , "y": 0.75 }
+                size_hint: 0.1, 0.04
+                bold: True
+            TextInput:
+                multiline: False
+                font_size: 15
+                pos_hint: {"x": 0.07 , "y": 0.7 }
+                size_hint: 0.17, 0.03
+            Button:
+                text: "Search"
+                font_size: 15
+                pos_hint: {"x": 0.1 , "y": 0.64 }
+                size_hint: 0.1, 0.05
+                on_press: root.employees_list()
+                        # set the position for the scroll bar
+            ScrollView:
+                pos_hint: {"x": 0.55, "y": 0.27}
+                size_hint: 0.4, 0.45
+                Label:
+                    id: employees_found
+                    multiline: True
+                    color: (0,0,0,1)
+                    size_hint: 0.7, None
+                    height: self.texture_size[1]
+                    text_size: None, None
+                    font_size: 20
+                    pos_hint: {"x": 0.3, "y": 0.3}
+                    background_color15: {1, 1, 1, 1}
+                    canvas.before:
+                        Color:
+                            rgba: self.background_color15
+                        Rectangle:
+                            size: self.size
+                            pos:self.pos
+
